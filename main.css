@@ -1,0 +1,249 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: rgb(22, 0, 0);
+  display: flex;
+  justify-content: center;
+}
+
+#wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  color: white;
+  z-index: 2;
+}
+
+#binding {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  color: white;
+  background-image: url(Weaver_s\ Den\ Seal\ of\ Binding\ -\ deep-loom-glow_response_0001_1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  animation: binding_anim 5s infinite ease-in-out;
+}
+
+@keyframes binding_anim {
+  0% {
+    filter: opacity(10%) drop-shadow(0px 0px 10px rgb(255, 255, 255));
+  }
+  50% {
+    filter: opacity(20%) drop-shadow(0px 0px 10px rgb(255, 255, 255));
+  }
+  100% {
+    filter: opacity(10%) drop-shadow(0px 0px 10px rgb(255, 255, 255));
+  }
+}
+
+#bg {
+  background-image: url(bg.png);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  aspect-ratio: 9/6;
+  height: 100%;
+  position: fixed;
+  box-shadow: 0 0 80px 80px rgb(22 0 0) inset;
+  border-radius: 80px;
+  z-index: 0;
+  filter: sepia() opacity(5%);
+}
+
+#logo {
+  width: 80%;
+  height: fit-content;
+  margin: 30px auto;
+
+  display: flex;
+  justify-content: center;
+
+  animation: logo_anim 4s infinite ease-in-out;
+}
+
+@keyframes logo_anim {
+  0% {
+    filter: drop-shadow(0px 0px 30px rgb(150, 0, 0));
+  }
+  50% {
+    filter: drop-shadow(0px 0px 40px rgb(170, 50, 50));
+  }
+  100% {
+    filter: drop-shadow(0px 0px 30px rgb(150, 0, 0));
+  }
+}
+
+#logo img {
+  height: 100%;
+  max-width: 100%;
+}
+
+#content {
+  margin-top: 1rem;
+  width: 100%;
+  margin: auto;
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+#top,
+#bottom {
+  margin: 10px auto;
+  width: fit-content;
+  max-width: 98%;
+  display: flex;
+  justify-content: center;
+  filter: drop-shadow(0px 0px 10px rgb(255, 255, 255));
+}
+
+#top img,
+#bottom img {
+  width: 100%;
+  max-width: 250px;
+}
+
+#countdown,
+#text,
+.text {
+  width: fit-content;
+  margin: auto;
+  font-size: 5rem;
+}
+
+#text,
+.text,
+#subtext {
+  font-size: 4rem;
+  text-align: center;
+}
+
+#subtext {
+  font-size: 2rem;
+}
+
+#promo,
+#hornet {
+  background-size: contain;
+  position: fixed;
+  bottom: 20px;
+  z-index: 10;
+}
+
+#promo {
+  aspect-ratio: 1000/977;
+  background-image: url(HornetPromo2.webp);
+  right: 20px;
+  box-shadow: 0 0 8px 8px rgb(22 0 0) inset;
+  border-radius: 10%;
+  width: 15%;
+}
+
+#hornet {
+  aspect-ratio: 360 / 295;
+  left: 20px;
+  width: 15%;
+  transform: scaleX(-1);
+  transition: 200ms linear;
+  background-repeat: no-repeat;
+  background-image: url("hornet/1.png");
+  filter: drop-shadow(0px 0px 10px rgb(170, 0, 0));
+}
+
+@keyframes hornet_anim {
+  0% {
+    background-image: url("hornet/1.png");
+  }
+  16.6% {
+    background-image: url("hornet/2.png");
+  }
+  33.2% {
+    background-image: url("hornet/3.png");
+  }
+  49.8% {
+    background-image: url("hornet/4.png");
+  }
+  66.4% {
+    background-image: url("hornet/5.png");
+  }
+  83% {
+    background-image: url("hornet/6.png");
+  }
+}
+
+#hornet:hover {
+  filter: drop-shadow(0px 0px 10px rgb(255, 200, 200));
+  cursor: pointer;
+  animation: hornet_anim 600ms infinite step-end;
+}
+
+@media screen and (max-width: 800px), screen and (max-height: 550px) {
+  #promo {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #text,
+  .text {
+    font-size: 3rem;
+  }
+}
+
+#progress-border,
+#progress {
+  height: 30px;
+  filter: drop-shadow(0px 0px 10px rgb(170 0 0));
+}
+
+#progress-border {
+  margin: auto;
+  position: fixed;
+  bottom: 10px;
+  border: 2px solid rgb(100, 0, 0);
+  background-color: rgb(22, 0, 0);
+  width: 50%;
+  z-index: 4;
+}
+
+#progress-border::after,
+#progress-border::before {
+  position: absolute;
+  color: white;
+  top: -1.5rem;
+}
+
+#progress-border[data-end]::after {
+  content: attr(data-end);
+  text-align: right;
+  right: 0;
+}
+
+#progress-border[data-start]::before {
+  content: attr(data-start);
+  text-align: left;
+  left: 0;
+}
+
+#progress {
+  background-image: linear-gradient(
+    to right,
+    rgb(255, 100, 100),
+    rgb(255, 150, 150)
+  );
+  z-index: 3;
+  width: 0%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  transition: 200ms ease;
+}
+
+#bar {
+  height: 50px;
+  margin: auto;
+}
