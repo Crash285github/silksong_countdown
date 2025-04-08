@@ -1,6 +1,6 @@
 let countdown = document.getElementById("countdown");
 
-let release_window = new Date("Dec 31, 2025 23:59:59");
+let release_window = new Date("Sept 17, 2025 23:59:59");
 let start_time = new Date("Apr 2, 2025 15:30:00");
 let today = new Date();
 
