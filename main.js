@@ -1,7 +1,7 @@
 let countdown = document.getElementById("countdown");
 
 let release_window = new Date("Sept 4, 2025 23:59:59");
-let start_time = new Date("Apr 2, 2025 15:30:00");
+let start_time = new Date("Aug 21, 2025 15:30:00");
 
 let time_precision = Math.floor(Math.random() * 3);
 
