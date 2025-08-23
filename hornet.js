@@ -23,8 +23,8 @@ function pressHornet() {
 
   time_precision = Math.floor(Math.random() * 3);
 
-  if (!toggle) start_time = new Date("Feb 14, 2019 19:00:00");
-  else start_time = new Date("Aug 21, 2025 15:30:00");
+  if (!toggle) start_time = new Date("2019-02-14T19:00:00Z");
+  else start_time = new Date("2025-08-21T15:30:00Z");
 
   setCountdown(start_time);
 
